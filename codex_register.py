@@ -30,10 +30,47 @@ import argparse
 from curl_cffi import requests as cffi_requests
 from mailapi import MailAPI
 
+
+def _load_local_env(env_path: str) -> None:
+    """读取项目根目录 .env（仅填充尚未存在的环境变量）。"""
+    if not os.path.isfile(env_path):
+        return
+
+    try:
+        with open(env_path, "r", encoding="utf-8") as f:
+            for raw_line in f:
+                line = raw_line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+
+                key, value = line.split("=", 1)
+                key = key.strip()
+                value = value.strip()
+
+                if not key:
+                    continue
+                if len(value) >= 2 and value[0] == value[-1] and value[0] in ('"', "'"):
+                    value = value[1:-1]
+
+                os.environ.setdefault(key, value)
+    except Exception:
+        # .env 解析失败时保持默认行为，避免影响主流程。
+        pass
+
+
+def _get_env_list(key: str, default: list[str]) -> list[str]:
+    raw = os.getenv(key, "").strip()
+    if not raw:
+        return default
+    values = [item.strip() for item in raw.split(",") if item.strip()]
+    return values or default
+
 # ═══════════════════════════════════════════════════════
 # 常量配置
 # ═══════════════════════════════════════════════════════
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ENV_FILE = os.path.join(SCRIPT_DIR, ".env")
+_load_local_env(ENV_FILE)
 
 # OpenAI OAuth
 OAI_CLIENT_ID = "app_EMoamEEZ73f0CkXaXp7hrann"
@@ -48,7 +85,7 @@ OAI_VERIFY_OTP_URL = "https://auth.openai.com/api/accounts/email-otp/validate"
 OAI_CREATE_URL = "https://auth.openai.com/api/accounts/create_account"
 OAI_WORKSPACE_URL = "https://auth.openai.com/api/accounts/workspace/select"
 
-LOCAL_CALLBACK_PORT = 1455
+LOCAL_CALLBACK_PORT = int(os.getenv("LOCAL_CALLBACK_PORT", "1455"))
 LOCAL_REDIRECT_URI = f"http://localhost:{LOCAL_CALLBACK_PORT}/auth/callback"
 
 # 文件路径
@@ -59,18 +96,18 @@ PROXY_CACHE_FILE = os.path.join(SCRIPT_DIR, "proxy_cache.json")
 
 
 # 邮箱后缀
-EMAIL_DOMAINS = ["example1.com", "example2.com", "example3.com", "example4.com"]
+EMAIL_DOMAINS = _get_env_list("EMAIL_DOMAINS", [])
 # Token 上传服务器
-CPA_URL = ""#http://your-server:port
-MANAGEMENT_KEY = "your-management-key"
+CPA_URL = os.getenv("CPA_URL", "http://127.0.0.1:8317")
+MANAGEMENT_KEY = os.getenv("MANAGEMENT_KEY", "")
 # MailAPI 配置（固定）
-MAIL_API_URL = "https://mail.example.com"
-MAIL_API_AUTH = "your-mailapi-auth"
-MAIL_PASSWD = ""  # 可选，cloudflare_temp_email私有站点密码
+MAIL_API_URL = os.getenv("MAIL_API_URL", "")
+MAIL_API_AUTH = os.getenv("MAIL_API_AUTH", "")
+MAIL_PASSWD = os.getenv("MAIL_PASSWD", "")  # 可选，cloudflare_temp_email私有站点密码
 # 超时与重试
-MAIL_POLL_TIMEOUT = 180
-OTP_RESEND_INTERVAL = 25
-MAX_RETRY_PER_ACCOUNT = 5
+MAIL_POLL_TIMEOUT = int(os.getenv("MAIL_POLL_TIMEOUT", "180"))
+OTP_RESEND_INTERVAL = int(os.getenv("OTP_RESEND_INTERVAL", "25"))
+MAX_RETRY_PER_ACCOUNT = int(os.getenv("MAX_RETRY_PER_ACCOUNT", "5"))
 
 
 
@@ -835,7 +872,15 @@ def main():
     log.info(" codex 注册机")
     log.info("=" * 55)
 
-    mail_api = MailAPI(worker_url=MAIL_API_URL, admin_auth=MAIL_API_AUTH)
+    if not MAIL_API_URL or not MAIL_API_AUTH:
+        log.error("请先在 .env 中配置 MAIL_API_URL 和 MAIL_API_AUTH")
+        return
+
+    mail_api = MailAPI(
+        worker_url=MAIL_API_URL,
+        admin_auth=MAIL_API_AUTH,
+        webmail_password=MAIL_PASSWD,
+    )
     log.info(f"📨 MailAPI: {MAIL_API_URL}")
 
 
@@ -887,8 +932,10 @@ def main():
     log.info(f"  📁 结果: {RESULTS_DIR}")
 
     # 上传并清理
-    if stats["ok"] > 0 and CPA_URL:
+    if stats["ok"] > 0 and CPA_URL and MANAGEMENT_KEY:
         upload_and_cleanup(RESULTS_DIR)
+    elif stats["ok"] > 0:
+        log.info("📤 未配置 MANAGEMENT_KEY，跳过上传")
 
 
 if __name__ == "__main__":

@@ -40,19 +40,22 @@ pip install -r requirements.txt
 
 ## 配置说明
 
-在 `codex_register.py` 中配置以下常量：
+在项目根目录创建 `.env`（可直接复制 `.env.example` 并重命名为 `.env`）。
 
-```python
-EMAIL_DOMAINS = ["example1.com", "example2.com", "example3.com", "example4.com"]
-CPA_URL = "http://your-server:port"
-MANAGEMENT_KEY = "your-management-key"
-MAIL_API_URL = "https://mail.example.com"
-MAIL_API_AUTH = "your-mailapi-auth"
+`.env` 示例：
+
+```dotenv
+EMAIL_DOMAINS=example1.com,example2.com,example3.com,example4.com
+CPA_URL=http://your-server:port
+MANAGEMENT_KEY=your-management-key
+MAIL_API_URL=https://mail.example.com
+MAIL_API_AUTH=your-mailapi-auth
+MAIL_PASSWD=
 ```
 
 字段说明：
 - `EMAIL_DOMAINS`：随机邮箱域名池。
-- `MAIL_API_URL` / `MAIL_API_AUTH`：cloudflare_temp_email邮件查询服务地址和管理密码，默认没有启用私有站点，如果启用了私有站点请填写`MAIL_PASSWD`。
+- `MAIL_API_URL` / `MAIL_API_AUTH`：cloudflare_temp_email邮件查询服务地址和管理密码，默认没有启用私有站点，如果启用了私有站点请填写 `MAIL_PASSWD`。
 - `CPA_URL` / `MANAGEMENT_KEY`：token 文件上传的CPA服务地址和登陆密钥。
 
 域名邮箱服务项目：
