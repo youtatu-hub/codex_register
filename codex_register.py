@@ -102,6 +102,7 @@ CPA_URL = os.getenv("CPA_URL", "http://127.0.0.1:8317")
 MANAGEMENT_KEY = os.getenv("MANAGEMENT_KEY", "")
 # MailAPI 配置（固定）
 MAIL_API_URL = os.getenv("MAIL_API_URL", "")
+MAIL_API_API_URL = os.getenv("MAIL_API_API_URL", MAIL_API_URL)
 MAIL_API_AUTH = os.getenv("MAIL_API_AUTH", "")
 MAIL_PASSWD = os.getenv("MAIL_PASSWD", "")  # 可选，cloudflare_temp_email私有站点密码
 # 超时与重试
@@ -877,11 +878,13 @@ def main():
         return
 
     mail_api = MailAPI(
-        worker_url=MAIL_API_URL,
+        worker_url=MAIL_API_API_URL,
         admin_auth=MAIL_API_AUTH,
         webmail_password=MAIL_PASSWD,
+        site_url=MAIL_API_URL,
     )
-    log.info(f"📨 MailAPI: {MAIL_API_URL}")
+    log.info(f"📨 Mail站点: {MAIL_API_URL}")
+    log.info(f"📨 Mail接口: {MAIL_API_API_URL}")
 
 
     # 加载代理池
