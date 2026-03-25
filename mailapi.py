@@ -1,20 +1,10 @@
-import re
 import requests
+import re
 
 
 class MailAPI:
-    def __init__(
-        self,
-        worker_url: str,
-        admin_auth: str,
-        webmail_password: str = "",
-        site_url: str = "",
-    ):
-        self.base_url = worker_url.rstrip("/")
-        self.urls = [
-            self.base_url + "/admin/mails",
-            self.base_url + "/mails",
-        ]
+    def __init__(self, worker_url: str, admin_auth: str, webmail_password: str = ""):
+        self.url = worker_url.rstrip("/") + "/admin/mails"
         self.headers = {
             "x-admin-auth": admin_auth
         }
@@ -22,10 +12,6 @@ class MailAPI:
         # 可选的 Webmail 认证头，仅在传入时附加
         if webmail_password:
             self.headers["x-custom-auth"] = webmail_password
-        if site_url:
-            origin = site_url.rstrip("/")
-            self.headers["Origin"] = origin
-            self.headers["Referer"] = origin + "/"
 
     def get_mails(self, limit=1, offset=0, address=None):
         params = {
@@ -36,34 +22,9 @@ class MailAPI:
         if address:
             params["address"] = address
 
-        last_error = None
-        for url in self.urls:
-            try:
-                resp = requests.get(url, headers=self.headers, params=params, timeout=30)
-                resp.raise_for_status()
-
-                content_type = resp.headers.get("Content-Type", "")
-                try:
-                    data = resp.json()
-                except ValueError as exc:
-                    snippet = resp.text.strip().replace("\r", " ").replace("\n", " ")
-                    snippet = snippet[:180]
-                    raise RuntimeError(
-                        f"MailAPI 接口 {url} 返回的不是 JSON，"
-                        f"status={resp.status_code}, content_type={content_type!r}, body={snippet!r}"
-                    ) from exc
-
-                if not isinstance(data, dict) or "results" not in data:
-                    raise RuntimeError(
-                        f"MailAPI 接口 {url} 返回结构异常，"
-                        f"status={resp.status_code}, content_type={content_type!r}, type={type(data).__name__}"
-                    )
-
-                return data
-            except Exception as exc:
-                last_error = exc
-
-        raise RuntimeError(f"MailAPI 所有候选接口都失败了: {last_error}")
+        resp = requests.get(self.url, headers=self.headers, params=params, timeout=30)
+        resp.raise_for_status()
+        return resp.json()
 
     def get_latest_code(self, address=None):
         data = self.get_mails(limit=1, offset=0, address=address)

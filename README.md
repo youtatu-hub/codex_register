@@ -3,6 +3,19 @@
 基于 Python 的 HTTP 自动化脚本，通过接口执行账号注册/登录相关步骤，并通过 MailAPI 轮询邮箱验证码，注册完成后自动上传到CPA（如果有配置的话）。
 项目参考：https://github.com/Ethan-W20/openai-auto-register
 
+本项目依旧可用，如无法注册请自行检查代理质量和对应域名邮箱是否被拉黑
+# 当前已经修复了，上传了一版代码，用的是比较通用的PoW
+**这个不是我的最初思路，但是看到已经有佬在论坛中讲解了PoW的思路，那我也就发出来吧**
+
+现在之前再获取sentinel的时候缺少PoW，导致要求添加手机号码。同时现在直接注册会无法获取的到完整的内容，需要再次登陆才可以。感觉这个很快也会被堵住，且用且珍惜吧
+
+直接在codex上进行注册会被要求添加手机号码，据说如果ip够干净能跳过，但是干净的ip是用一个少一个。
+
+不添加手机号且不用PoW的方式也弄出来了，但是不太想很快公开，先等等看吧。下图为不需要手机号不用PoW的截图
+
+<img width="575" height="163" alt="image" src="https://github.com/user-attachments/assets/06915722-1caf-4a80-922b-2471c019ce42" />
+
+
 ## 免责声明
 
 请仅在你有明确授权、并且符合目标平台条款与当地法律法规的前提下使用本项目。由不当使用产生的风险与责任由使用者自行承担。项目仅供参考学习，请勿滥用！！！
@@ -40,23 +53,33 @@ pip install -r requirements.txt
 
 ## 配置说明
 
-在项目根目录创建 `.env`（可直接复制 `.env.example` 并重命名为 `.env`）。
+配置改为通过环境变量或项目根目录下的 `.env` 文件加载，脚本启动时会优先使用系统环境变量，其次读取 `.env`。可先复制 `.env.example` 为 `.env` 后再填写：
+
+```bash
+copy .env.example .env
+```
 
 `.env` 示例：
 
 ```dotenv
-EMAIL_DOMAINS=example1.com,example2.com,example3.com,example4.com
+EMAIL_DOMAINS=example1.com,example2.com
 CPA_URL=http://your-server:port
 MANAGEMENT_KEY=your-management-key
 MAIL_API_URL=https://mail.example.com
 MAIL_API_AUTH=your-mailapi-auth
 MAIL_PASSWD=
+MAIL_POLL_TIMEOUT=180
+OTP_RESEND_INTERVAL=25
+MAX_RETRY_PER_ACCOUNT=5
+LOCAL_CALLBACK_PORT=1455
 ```
 
 字段说明：
 - `EMAIL_DOMAINS`：随机邮箱域名池。
-- `MAIL_API_URL` / `MAIL_API_AUTH`：cloudflare_temp_email邮件查询服务地址和管理密码，默认没有启用私有站点，如果启用了私有站点请填写 `MAIL_PASSWD`。
+- `MAIL_API_URL` / `MAIL_API_AUTH`：cloudflare_temp_email邮件查询服务地址和管理密码，默认没有启用私有站点，如果启用了私有站点请填写`MAIL_PASSWD`。
 - `CPA_URL` / `MANAGEMENT_KEY`：token 文件上传的CPA服务地址和登陆密钥。
+- `MAIL_POLL_TIMEOUT` / `OTP_RESEND_INTERVAL` / `MAX_RETRY_PER_ACCOUNT`：轮询、重发和重试相关超时配置。
+- `LOCAL_CALLBACK_PORT`：本地 OAuth 回调监听端口。
 
 域名邮箱服务项目：
 - `cloudflare_temp_email`：https://github.com/dreamhunter2333/cloudflare_temp_email
@@ -106,6 +129,7 @@ python codex_register.py --count 20 --workers 5
 - 以 UTC 日期 (`YYYY-MM-DD`) 作为缓存时间标记。
 - 若缓存中的 `date` 与当前日期不一致，会先删除旧 `proxy_cache.json`，再重建当天缓存。
 - 个人代理池构建脚本就不上传到仓库了，如果没有合适的代理，可用使用本人的另一个项目（[warp-proxy-docker](https://github.com/kschen202115/warp-proxy-docker)）
+- 上面那个仓库有问题，酌情使用，或者使用这个仓库的公共代理[PROXY-List](https://github.com/TheSpeedX/PROXY-List)
 
 `proxy_cache.json`内结构如下
 ```bash
@@ -134,5 +158,4 @@ python codex_register.py --count 20 --workers 5
 3. 上传失败
 - 检查 `CPA_URL` 与 `MANAGEMENT_KEY`。
 - 检查上传接口路径是否与服务端一致。
-
 

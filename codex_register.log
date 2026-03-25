@@ -486,3 +486,337 @@
 2026-03-18 12:10:17,153 [INFO]   [1] 发起 OAuth (注册)...
 2026-03-18 12:10:21,651 [INFO]       状态: 200
 2026-03-18 12:10:21,651 [INFO]       设备ID: 666e1b58-68c8-41...
+2026-03-25 09:39:10,537 [INFO] =======================================================
+2026-03-25 09:39:10,537 [INFO]  codex 注册机
+2026-03-25 09:39:10,537 [INFO] =======================================================
+2026-03-25 09:39:10,538 [INFO] 📨 Mail站点: https://temp-mail.youtatu.workers.dev
+2026-03-25 09:39:10,538 [INFO] 📨 Mail接口: https://temp-mail.youtatu.workers.dev
+2026-03-25 09:39:10,538 [INFO] 🌐 代理池: 1 个可用代理
+2026-03-25 09:39:10,539 [INFO] 🚀 本次注册: 1 个 (并发: 1)
+2026-03-25 09:39:10,539 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:39:10,539 [INFO] [1/1] ij0nz7rece5pyi@tramp.qzz.io
+2026-03-25 09:39:10,539 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:39:10,539 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:39:10,540 [INFO]     🎭 浏览器指纹: safari184
+2026-03-25 09:39:10,540 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:39:15,024 [INFO]       状态: 200
+2026-03-25 09:39:15,025 [INFO]       设备ID: d10a7a4c-689d-4a...
+2026-03-25 09:39:16,685 [INFO]   [2] 获取 Sentinel token...
+2026-03-25 09:39:20,614 [INFO]       OK
+2026-03-25 09:39:21,555 [INFO]   [3] 提交邮箱: ij0nz7rece5pyi@tramp.qzz.io (注册)
+2026-03-25 09:39:22,723 [INFO]       OK
+2026-03-25 09:39:22,724 [INFO]       页面类型: create_account_password
+2026-03-25 09:39:23,765 [INFO]    设置密码...
+2026-03-25 09:39:24,606 [INFO]       OK，密码已设置3dG58-9d9aU7
+2026-03-25 09:39:24,607 [INFO]   [4] 发送 OTP...
+2026-03-25 09:39:25,046 [INFO]       OK，验证码已发送到 ij0nz7rece5pyi@tramp.qzz.io
+2026-03-25 09:39:25,047 [INFO]     📧 等待验证码 (ij0nz7rece5pyi@tramp.qzz.io, MailAPI)...
+2026-03-25 09:39:29,973 [INFO]     ✅ 验证码: 966554 (耗时 4s)
+2026-03-25 09:39:30,465 [INFO]   [6] 验证 OTP: 966554
+2026-03-25 09:39:31,120 [INFO]       OK
+2026-03-25 09:39:32,214 [INFO]   [7] 创建账号: Camila Murphy, 2000-01-20
+2026-03-25 09:39:35,348 [INFO]       OK
+2026-03-25 09:39:36,563 [WARNING]   ❌ 尝试 1 失败: RuntimeError: 未找到 workspace_id
+2026-03-25 09:39:36,564 [INFO]   重试 #2...
+2026-03-25 09:39:40,403 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:39:40,403 [INFO]     🎭 浏览器指纹: safari184
+2026-03-25 09:39:40,403 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:39:43,927 [WARNING]   ❌ 尝试 2 失败: RequestException: Failed to perform, curl: (23) Failure writing output to destination, passed 13 returned 0. See https://curl.se/libcurl/c/libcurl-errors.html first for
+2026-03-25 09:39:43,928 [INFO]   重试 #3...
+2026-03-25 09:45:37,498 [INFO] =======================================================
+2026-03-25 09:45:37,498 [INFO]  codex 注册机
+2026-03-25 09:45:37,498 [INFO] =======================================================
+2026-03-25 09:45:37,498 [INFO] 📨 MailAPI: https://mail.example.com
+2026-03-25 09:45:37,498 [WARNING] 加载代理缓存失败: Expecting value: line 1 column 1 (char 0)
+2026-03-25 09:45:37,498 [WARNING] ⚠️ 代理池为空，将直连（可能被封）
+2026-03-25 09:45:37,498 [INFO] 🚀 本次注册: 5 个 (并发: 1)
+2026-03-25 09:45:37,498 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:45:37,499 [INFO] [1/5] nxg2mopldfbnwy@example2.com
+2026-03-25 09:45:37,499 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:45:37,499 [INFO]   🌐 代理: 无
+2026-03-25 09:45:37,499 [INFO]     🎭 浏览器指纹: chrome119
+2026-03-25 09:45:37,499 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:45:40,197 [INFO]       状态: 403
+2026-03-25 09:45:41,039 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:45:41,041 [INFO]       PoW token 已生成
+2026-03-25 09:45:44,926 [WARNING]   ❌ 尝试 1 失败: RuntimeError: Sentinel 失败: 403 <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 o
+2026-03-25 09:45:44,926 [INFO]   重试 #2...
+2026-03-25 09:45:48,118 [INFO]   🌐 代理: 无
+2026-03-25 09:45:48,118 [INFO]     🎭 浏览器指纹: safari260
+2026-03-25 09:45:48,118 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:46:46,900 [INFO] =======================================================
+2026-03-25 09:46:46,900 [INFO]  codex 注册机
+2026-03-25 09:46:46,900 [INFO] =======================================================
+2026-03-25 09:46:46,900 [INFO] 📨 MailAPI: https://mail.example.com
+2026-03-25 09:46:46,900 [INFO] 🌐 代理池: 1 个可用代理
+2026-03-25 09:46:46,900 [INFO] 🚀 本次注册: 5 个 (并发: 1)
+2026-03-25 09:46:46,901 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:46:46,901 [INFO] [1/5] szr9rtipal27xa@example1.com
+2026-03-25 09:46:46,901 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:46:46,901 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:46:46,901 [INFO]     🎭 浏览器指纹: chrome142
+2026-03-25 09:46:46,901 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:46:51,421 [INFO]       状态: 200
+2026-03-25 09:46:51,421 [INFO]       设备ID: 7db20a5a-2240-4d...
+2026-03-25 09:46:52,824 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:46:52,824 [INFO]       PoW token 已生成
+2026-03-25 09:46:56,403 [INFO]       Sentinel token OK
+2026-03-25 09:46:57,102 [INFO]   [3] 提交邮箱: szr9rtipal27xa@example1.com (注册)
+2026-03-25 09:46:58,060 [INFO]       OK
+2026-03-25 09:46:58,060 [INFO]       页面类型: create_account_password
+2026-03-25 09:46:59,354 [INFO]    设置密码...
+2026-03-25 09:47:00,183 [INFO]       OK，密码已设置81F33!x6nv9K
+2026-03-25 09:47:00,183 [INFO]   [4] 发送 OTP...
+2026-03-25 09:47:00,663 [INFO]       OK，验证码已发送到 szr9rtipal27xa@example1.com
+2026-03-25 09:47:00,663 [INFO]     📧 等待验证码 (szr9rtipal27xa@example1.com, MailAPI)...
+2026-03-25 09:47:00,872 [WARNING]     MailAPI 查询失败: HTTPSConnectionPool(host='mail.example.com', port=443): Max retries exceeded with url: /admin/mails?limit=1&offset=0&address=szr9rtipal27xa%40example1.com (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2026-03-25 09:47:03,991 [WARNING]     MailAPI 查询失败: HTTPSConnectionPool(host='mail.example.com', port=443): Max retries exceeded with url: /admin/mails?limit=1&offset=0&address=szr9rtipal27xa%40example1.com (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2026-03-25 09:51:59,806 [INFO] =======================================================
+2026-03-25 09:51:59,806 [INFO]  codex 注册机
+2026-03-25 09:51:59,806 [INFO] =======================================================
+2026-03-25 09:51:59,806 [INFO] 📨 MailAPI: https://temp-mail.youtatu.workers.dev
+2026-03-25 09:51:59,807 [INFO] 🌐 代理池: 1 个可用代理
+2026-03-25 09:51:59,807 [INFO] 🚀 本次注册: 5 个 (并发: 1)
+2026-03-25 09:51:59,807 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:51:59,807 [INFO] [1/5] jw51x8p1dr9ut4@tramp.qzz.io
+2026-03-25 09:51:59,807 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:51:59,807 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:51:59,807 [INFO]     🎭 浏览器指纹: chrome110
+2026-03-25 09:51:59,807 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:52:04,404 [INFO]       状态: 200
+2026-03-25 09:52:04,404 [INFO]       设备ID: 7ed01e84-df0b-4e...
+2026-03-25 09:52:05,709 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:52:05,709 [INFO]       PoW token 已生成
+2026-03-25 09:52:09,539 [INFO]       Sentinel token OK
+2026-03-25 09:52:10,935 [INFO]   [3] 提交邮箱: jw51x8p1dr9ut4@tramp.qzz.io (注册)
+2026-03-25 09:52:12,309 [INFO]       OK
+2026-03-25 09:52:12,309 [INFO]       页面类型: create_account_password
+2026-03-25 09:52:13,695 [INFO]    设置密码...
+2026-03-25 09:52:14,512 [INFO]       OK，密码已设置9]437X4w9RgT
+2026-03-25 09:52:14,512 [INFO]   [4] 发送 OTP...
+2026-03-25 09:52:15,109 [INFO]       OK，验证码已发送到 jw51x8p1dr9ut4@tramp.qzz.io
+2026-03-25 09:52:15,109 [INFO]     📧 等待验证码 (jw51x8p1dr9ut4@tramp.qzz.io, MailAPI)...
+2026-03-25 09:52:45,487 [INFO]     🔄 已重发 OTP
+2026-03-25 09:52:56,247 [INFO]     ✅ 验证码: 480188 (耗时 41s)
+2026-03-25 09:52:56,612 [INFO]   [6] 验证 OTP: 480188
+2026-03-25 09:52:57,289 [INFO]       OK
+2026-03-25 09:52:58,256 [INFO]   [7] 创建账号: Thomas Stewart, 2003-10-11
+2026-03-25 09:53:01,475 [INFO]       OK
+2026-03-25 09:53:02,541 [INFO]   [7.5] 注册完成，重新发起登录流程拿 token...
+2026-03-25 09:53:03,954 [INFO]   [7.5a] 重新发起 OAuth (登录)...
+2026-03-25 09:53:05,236 [INFO]          状态: 200
+2026-03-25 09:53:05,236 [INFO]          设备ID: 7ed01e84-df0b-4e...
+2026-03-25 09:53:06,307 [INFO]   [7.5b] 重新求解 Sentinel PoW...
+2026-03-25 09:53:06,611 [INFO]          Sentinel token OK
+2026-03-25 09:53:07,913 [INFO]   [7.5c] 提交邮箱 (登录): jw51x8p1dr9ut4@tramp.qzz.io
+2026-03-25 09:53:09,039 [INFO]          页面类型: login_password
+2026-03-25 09:53:10,430 [INFO]   [7.5d] 提交登录密码...
+2026-03-25 09:53:11,593 [INFO]          页面类型: email_otp_verification
+2026-03-25 09:53:11,593 [INFO]          密码校验通过，等待验证码...
+2026-03-25 09:53:12,185 [INFO]     📧 等待验证码 (jw51x8p1dr9ut4@tramp.qzz.io, MailAPI)...
+2026-03-25 09:53:12,762 [INFO]     ✅ 验证码: 480188 (耗时 0s)
+2026-03-25 09:53:12,763 [INFO]   [7.5f] 验证登录 OTP: 480188
+2026-03-25 09:53:13,836 [INFO]          OK
+2026-03-25 09:53:14,881 [INFO]   [8] 选择 Workspace: e0a7ceda-ecc3-415c-a...
+2026-03-25 09:53:15,320 [INFO]   [9] 跟随重定向获取 Token...
+2026-03-25 09:53:16,913 [INFO]   🎉 注册+登录成功！
+2026-03-25 09:53:16,915 [INFO]   💾 已保存: D:\python_code\codex_register\tokens\jw51x8p1dr9ut4@tramp.qzz.io--9]437X4w9RgT.json (77.1s)
+2026-03-25 09:53:16,915 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:53:16,915 [INFO] [2/5] hdn3v8xdaxkqq1@tramp.qzz.io
+2026-03-25 09:53:16,915 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:53:16,915 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:53:16,915 [INFO]     🎭 浏览器指纹: chrome120
+2026-03-25 09:53:16,915 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:53:21,359 [INFO]       状态: 200
+2026-03-25 09:53:21,359 [INFO]       设备ID: b4afc75d-edbc-44...
+2026-03-25 09:53:22,457 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:53:22,458 [INFO]       PoW token 已生成
+2026-03-25 09:53:26,181 [INFO]       Sentinel token OK
+2026-03-25 09:53:27,374 [INFO]   [3] 提交邮箱: hdn3v8xdaxkqq1@tramp.qzz.io (注册)
+2026-03-25 09:53:28,606 [INFO]       OK
+2026-03-25 09:53:28,606 [INFO]       页面类型: create_account_password
+2026-03-25 09:53:29,766 [INFO]    设置密码...
+2026-03-25 09:53:30,747 [INFO]       OK，密码已设置N]G7UV17129B
+2026-03-25 09:53:30,747 [INFO]   [4] 发送 OTP...
+2026-03-25 09:53:31,172 [INFO]       OK，验证码已发送到 hdn3v8xdaxkqq1@tramp.qzz.io
+2026-03-25 09:53:31,172 [INFO]     📧 等待验证码 (hdn3v8xdaxkqq1@tramp.qzz.io, MailAPI)...
+2026-03-25 09:53:35,224 [INFO]     ✅ 验证码: 654226 (耗时 4s)
+2026-03-25 09:53:35,901 [INFO]   [6] 验证 OTP: 654226
+2026-03-25 09:53:36,528 [INFO]       OK
+2026-03-25 09:53:37,789 [INFO]   [7] 创建账号: William Lee, 1990-07-12
+2026-03-25 09:53:40,978 [INFO]       OK
+2026-03-25 09:53:41,901 [INFO]   [7.5] 注册完成，重新发起登录流程拿 token...
+2026-03-25 09:53:43,166 [INFO]   [7.5a] 重新发起 OAuth (登录)...
+2026-03-25 09:53:44,403 [INFO]          状态: 200
+2026-03-25 09:53:44,403 [INFO]          设备ID: b4afc75d-edbc-44...
+2026-03-25 09:53:46,311 [INFO]   [7.5b] 重新求解 Sentinel PoW...
+2026-03-25 09:53:46,797 [INFO]          Sentinel token OK
+2026-03-25 09:53:47,670 [INFO]   [7.5c] 提交邮箱 (登录): hdn3v8xdaxkqq1@tramp.qzz.io
+2026-03-25 09:53:48,779 [INFO]          页面类型: login_password
+2026-03-25 09:53:50,232 [INFO]   [7.5d] 提交登录密码...
+2026-03-25 09:53:51,534 [INFO]          页面类型: email_otp_verification
+2026-03-25 09:53:51,534 [INFO]          密码校验通过，等待验证码...
+2026-03-25 09:53:52,165 [INFO]     📧 等待验证码 (hdn3v8xdaxkqq1@tramp.qzz.io, MailAPI)...
+2026-03-25 09:53:52,709 [INFO]     ✅ 验证码: 654226 (耗时 0s)
+2026-03-25 09:53:52,709 [INFO]   [7.5f] 验证登录 OTP: 654226
+2026-03-25 09:53:53,696 [INFO]          OK
+2026-03-25 09:53:54,884 [INFO]   [8] 选择 Workspace: a8ca8f8e-da76-447f-b...
+2026-03-25 09:53:55,356 [INFO]   [9] 跟随重定向获取 Token...
+2026-03-25 09:53:57,465 [INFO]   🎉 注册+登录成功！
+2026-03-25 09:53:57,468 [INFO]   💾 已保存: D:\python_code\codex_register\tokens\hdn3v8xdaxkqq1@tramp.qzz.io--N]G7UV17129B.json (40.6s)
+2026-03-25 09:53:57,468 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:53:57,468 [INFO] [3/5] 8xtuz44as9qjtz@tramp.qzz.io
+2026-03-25 09:53:57,468 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:53:57,468 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:53:57,468 [INFO]     🎭 浏览器指纹: chrome124
+2026-03-25 09:53:57,468 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:54:01,922 [INFO]       状态: 200
+2026-03-25 09:54:01,922 [INFO]       设备ID: 6edee537-0b5e-41...
+2026-03-25 09:54:03,255 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:54:03,256 [INFO]       PoW token 已生成
+2026-03-25 09:54:06,932 [INFO]       Sentinel token OK
+2026-03-25 09:54:07,721 [INFO]   [3] 提交邮箱: 8xtuz44as9qjtz@tramp.qzz.io (注册)
+2026-03-25 09:54:08,714 [INFO]       OK
+2026-03-25 09:54:08,714 [INFO]       页面类型: create_account_password
+2026-03-25 09:54:09,451 [INFO]    设置密码...
+2026-03-25 09:54:10,211 [INFO]       OK，密码已设置80S69Is2l1#Y
+2026-03-25 09:54:10,211 [INFO]   [4] 发送 OTP...
+2026-03-25 09:54:10,669 [INFO]       OK，验证码已发送到 8xtuz44as9qjtz@tramp.qzz.io
+2026-03-25 09:54:10,670 [INFO]     📧 等待验证码 (8xtuz44as9qjtz@tramp.qzz.io, MailAPI)...
+2026-03-25 09:54:40,316 [INFO]     🔄 已重发 OTP
+2026-03-25 09:54:51,025 [INFO]     ✅ 验证码: 451520 (耗时 40s)
+2026-03-25 09:54:51,440 [INFO]   [6] 验证 OTP: 451520
+2026-03-25 09:54:52,098 [INFO]       OK
+2026-03-25 09:54:53,401 [INFO]   [7] 创建账号: James Anderson, 2004-07-22
+2026-03-25 09:54:56,528 [INFO]       OK
+2026-03-25 09:54:57,056 [INFO]   [7.5] 注册完成，重新发起登录流程拿 token...
+2026-03-25 09:54:58,941 [INFO]   [7.5a] 重新发起 OAuth (登录)...
+2026-03-25 09:55:00,197 [INFO]          状态: 200
+2026-03-25 09:55:00,197 [INFO]          设备ID: 6edee537-0b5e-41...
+2026-03-25 09:55:01,015 [INFO]   [7.5b] 重新求解 Sentinel PoW...
+2026-03-25 09:55:01,386 [INFO]          Sentinel token OK
+2026-03-25 09:55:02,066 [INFO]   [7.5c] 提交邮箱 (登录): 8xtuz44as9qjtz@tramp.qzz.io
+2026-03-25 09:55:03,066 [INFO]          页面类型: login_password
+2026-03-25 09:55:04,539 [INFO]   [7.5d] 提交登录密码...
+2026-03-25 09:55:06,005 [INFO]          页面类型: email_otp_verification
+2026-03-25 09:55:06,005 [INFO]          密码校验通过，等待验证码...
+2026-03-25 09:55:06,824 [INFO]     📧 等待验证码 (8xtuz44as9qjtz@tramp.qzz.io, MailAPI)...
+2026-03-25 09:55:07,362 [INFO]     ✅ 验证码: 451520 (耗时 0s)
+2026-03-25 09:55:07,362 [INFO]   [7.5f] 验证登录 OTP: 451520
+2026-03-25 09:55:08,300 [INFO]          OK
+2026-03-25 09:55:09,684 [INFO]   [8] 选择 Workspace: ba5e47bd-a1a5-4e53-8...
+2026-03-25 09:55:10,111 [INFO]   [9] 跟随重定向获取 Token...
+2026-03-25 09:55:11,969 [INFO]   🎉 注册+登录成功！
+2026-03-25 09:55:11,971 [INFO]   💾 已保存: D:\python_code\codex_register\tokens\8xtuz44as9qjtz@tramp.qzz.io--80S69Is2l1#Y.json (74.5s)
+2026-03-25 09:55:11,971 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:55:11,971 [INFO] [4/5] hm8f6hhi4bmyw5@tramp.qzz.io
+2026-03-25 09:55:11,971 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:55:11,971 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:55:11,971 [INFO]     🎭 浏览器指纹: safari260
+2026-03-25 09:55:11,971 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:55:18,295 [INFO]       状态: 200
+2026-03-25 09:55:18,295 [INFO]       设备ID: d26d08ad-9090-4a...
+2026-03-25 09:55:19,795 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:55:19,795 [INFO]       PoW token 已生成
+2026-03-25 09:55:23,699 [INFO]       Sentinel token OK
+2026-03-25 09:55:24,978 [INFO]   [3] 提交邮箱: hm8f6hhi4bmyw5@tramp.qzz.io (注册)
+2026-03-25 09:55:25,904 [INFO]       OK
+2026-03-25 09:55:25,904 [INFO]       页面类型: create_account_password
+2026-03-25 09:55:27,356 [INFO]    设置密码...
+2026-03-25 09:55:28,450 [INFO]       OK，密码已设置wy(kF29E1483
+2026-03-25 09:55:28,450 [INFO]   [4] 发送 OTP...
+2026-03-25 09:55:29,073 [INFO]       OK，验证码已发送到 hm8f6hhi4bmyw5@tramp.qzz.io
+2026-03-25 09:55:29,073 [INFO]     📧 等待验证码 (hm8f6hhi4bmyw5@tramp.qzz.io, MailAPI)...
+2026-03-25 09:55:33,380 [INFO]     ✅ 验证码: 991938 (耗时 4s)
+2026-03-25 09:55:34,184 [INFO]   [6] 验证 OTP: 991938
+2026-03-25 09:55:34,855 [INFO]       OK
+2026-03-25 09:55:35,921 [INFO]   [7] 创建账号: Violet Brown, 2006-06-26
+2026-03-25 09:55:42,037 [INFO]       OK
+2026-03-25 09:55:43,072 [INFO]   [7.5] 注册完成，重新发起登录流程拿 token...
+2026-03-25 09:55:45,020 [INFO]   [7.5a] 重新发起 OAuth (登录)...
+2026-03-25 09:55:46,228 [INFO]          状态: 200
+2026-03-25 09:55:46,228 [INFO]          设备ID: d26d08ad-9090-4a...
+2026-03-25 09:55:48,198 [INFO]   [7.5b] 重新求解 Sentinel PoW...
+2026-03-25 09:55:48,639 [INFO]          Sentinel token OK
+2026-03-25 09:55:49,767 [INFO]   [7.5c] 提交邮箱 (登录): hm8f6hhi4bmyw5@tramp.qzz.io
+2026-03-25 09:55:50,852 [INFO]          页面类型: login_password
+2026-03-25 09:55:51,535 [INFO]   [7.5d] 提交登录密码...
+2026-03-25 09:55:53,035 [INFO]          页面类型: email_otp_verification
+2026-03-25 09:55:53,036 [INFO]          密码校验通过，等待验证码...
+2026-03-25 09:55:54,472 [INFO]     📧 等待验证码 (hm8f6hhi4bmyw5@tramp.qzz.io, MailAPI)...
+2026-03-25 09:55:54,982 [INFO]     ✅ 验证码: 991938 (耗时 0s)
+2026-03-25 09:55:54,983 [INFO]   [7.5f] 验证登录 OTP: 991938
+2026-03-25 09:55:56,078 [INFO]          OK
+2026-03-25 09:55:57,572 [INFO]   [8] 选择 Workspace: aacacb88-7b0f-4dae-b...
+2026-03-25 09:55:57,991 [INFO]   [9] 跟随重定向获取 Token...
+2026-03-25 09:55:59,624 [INFO]   🎉 注册+登录成功！
+2026-03-25 09:55:59,627 [INFO]   💾 已保存: D:\python_code\codex_register\tokens\hm8f6hhi4bmyw5@tramp.qzz.io--wy(kF29E1483.json (47.7s)
+2026-03-25 09:55:59,627 [INFO] 
+──────────────────────────────────────────────────
+2026-03-25 09:55:59,627 [INFO] [5/5] 4ky1lvok7v3yu0@yta.qzz.io
+2026-03-25 09:55:59,627 [INFO] ──────────────────────────────────────────────────
+2026-03-25 09:55:59,627 [INFO]   🌐 代理: socks5://127.0.0.1:7890
+2026-03-25 09:55:59,627 [INFO]     🎭 浏览器指纹: chrome124
+2026-03-25 09:55:59,627 [INFO]   [1] 发起 OAuth (注册)...
+2026-03-25 09:56:04,062 [INFO]       状态: 200
+2026-03-25 09:56:04,062 [INFO]       设备ID: 14a4f977-fbfb-43...
+2026-03-25 09:56:05,941 [INFO]   [2] 求解 Sentinel PoW...
+2026-03-25 09:56:05,941 [INFO]       PoW token 已生成
+2026-03-25 09:56:10,043 [INFO]       Sentinel token OK
+2026-03-25 09:56:11,061 [INFO]   [3] 提交邮箱: 4ky1lvok7v3yu0@yta.qzz.io (注册)
+2026-03-25 09:56:12,050 [INFO]       OK
+2026-03-25 09:56:12,050 [INFO]       页面类型: create_account_password
+2026-03-25 09:56:12,948 [INFO]    设置密码...
+2026-03-25 09:56:14,050 [INFO]       OK，密码已设置4ap02W99Z@M7
+2026-03-25 09:56:14,050 [INFO]   [4] 发送 OTP...
+2026-03-25 09:56:14,525 [INFO]       OK，验证码已发送到 4ky1lvok7v3yu0@yta.qzz.io
+2026-03-25 09:56:14,525 [INFO]     📧 等待验证码 (4ky1lvok7v3yu0@yta.qzz.io, MailAPI)...
+2026-03-25 09:56:18,579 [INFO]     ✅ 验证码: 068791 (耗时 4s)
+2026-03-25 09:56:19,147 [INFO]   [6] 验证 OTP: 068791
+2026-03-25 09:56:19,922 [INFO]       OK
+2026-03-25 09:56:20,467 [INFO]   [7] 创建账号: Isaac Ward, 1989-05-11
+2026-03-25 09:56:23,679 [INFO]       OK
+2026-03-25 09:56:24,468 [INFO]   [7.5] 注册完成，重新发起登录流程拿 token...
+2026-03-25 09:56:26,183 [INFO]   [7.5a] 重新发起 OAuth (登录)...
+2026-03-25 09:56:27,414 [INFO]          状态: 200
+2026-03-25 09:56:27,414 [INFO]          设备ID: 14a4f977-fbfb-43...
+2026-03-25 09:56:29,036 [INFO]   [7.5b] 重新求解 Sentinel PoW...
+2026-03-25 09:56:29,670 [INFO]          Sentinel token OK
+2026-03-25 09:56:30,983 [INFO]   [7.5c] 提交邮箱 (登录): 4ky1lvok7v3yu0@yta.qzz.io
+2026-03-25 09:56:31,965 [INFO]          页面类型: login_password
+2026-03-25 09:56:32,522 [INFO]   [7.5d] 提交登录密码...
+2026-03-25 09:56:34,041 [INFO]          页面类型: email_otp_verification
+2026-03-25 09:56:34,041 [INFO]          密码校验通过，等待验证码...
+2026-03-25 09:56:34,757 [INFO]     📧 等待验证码 (4ky1lvok7v3yu0@yta.qzz.io, MailAPI)...
+2026-03-25 09:56:35,303 [INFO]     ✅ 验证码: 068791 (耗时 0s)
+2026-03-25 09:56:35,303 [INFO]   [7.5f] 验证登录 OTP: 068791
+2026-03-25 09:56:36,856 [INFO]          OK
+2026-03-25 09:56:38,156 [INFO]   [8] 选择 Workspace: 301f2d32-6cf7-459b-8...
+2026-03-25 09:56:38,582 [INFO]   [9] 跟随重定向获取 Token...
+2026-03-25 09:56:40,161 [INFO]   🎉 注册+登录成功！
+2026-03-25 09:56:40,163 [INFO]   💾 已保存: D:\python_code\codex_register\tokens\4ky1lvok7v3yu0@yta.qzz.io--4ap02W99Z@M7.json (40.5s)
+2026-03-25 09:56:40,163 [INFO] 
+=======================================================
+2026-03-25 09:56:40,163 [INFO]   注册完成
+2026-03-25 09:56:40,163 [INFO] =======================================================
+2026-03-25 09:56:40,163 [INFO]   ✅ 成功: 5
+2026-03-25 09:56:40,163 [INFO]   ❌ 失败: 0
+2026-03-25 09:56:40,163 [INFO]   ⏱️ 耗时: 280.4s (4.7m)
+2026-03-25 09:56:40,163 [INFO]   📁 结果: D:\python_code\codex_register\tokens
+2026-03-25 09:56:40,163 [INFO] 
+📤 开始上传 5 个 token 文件到 http://127.0.0.1:8317
+2026-03-25 09:56:42,227 [WARNING]   ❌ 上传异常: 4ky1lvok7v3yu0@yta.qzz.io--4ap02W99Z@M7.json (HTTPConnectionPool(host='127.0.0.1', port=8317): Max retries exceeded with url: /v0/management/auth-files?name=4ky1lvok7v3yu0@yta.qzz.io--4ap02W99Z@M7.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BC7CE823C0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2026-03-25 09:56:44,249 [WARNING]   ❌ 上传异常: 8xtuz44as9qjtz@tramp.qzz.io--80S69Is2l1#Y.json (HTTPConnectionPool(host='127.0.0.1', port=8317): Max retries exceeded with url: /v0/management/auth-files?name=8xtuz44as9qjtz@tramp.qzz.io--80S69Is2l1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BC7CE32AD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2026-03-25 09:56:46,293 [WARNING]   ❌ 上传异常: hdn3v8xdaxkqq1@tramp.qzz.io--N]G7UV17129B.json (HTTPConnectionPool(host='127.0.0.1', port=8317): Max retries exceeded with url: /v0/management/auth-files?name=hdn3v8xdaxkqq1@tramp.qzz.io--N%5DG7UV17129B.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BC7CE33B10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2026-03-25 09:56:48,355 [WARNING]   ❌ 上传异常: hm8f6hhi4bmyw5@tramp.qzz.io--wy(kF29E1483.json (HTTPConnectionPool(host='127.0.0.1', port=8317): Max retries exceeded with url: /v0/management/auth-files?name=hm8f6hhi4bmyw5@tramp.qzz.io--wy(kF29E1483.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BC7CEB5350>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2026-03-25 09:56:50,392 [WARNING]   ❌ 上传异常: jw51x8p1dr9ut4@tramp.qzz.io--9]437X4w9RgT.json (HTTPConnectionPool(host='127.0.0.1', port=8317): Max retries exceeded with url: /v0/management/auth-files?name=jw51x8p1dr9ut4@tramp.qzz.io--9%5D437X4w9RgT.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BC7CEB4770>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2026-03-25 09:56:50,393 [INFO] 📤 上传完成: 0 成功, 5 失败

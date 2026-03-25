@@ -1,9 +1,9 @@
  {
-     "date": "2026-03-13",
+     "date": "2026-03-10",
      "usable": [
          {
              "proxy": "127.0.0.1:7890",
-             "http": true,
+             "http": false,
              "socks4": false,
              "socks5": true
          }
