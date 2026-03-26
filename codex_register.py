@@ -1059,7 +1059,7 @@ def upload_and_cleanup(directory: str):
 def main():
     parser = argparse.ArgumentParser(description="codex 注册机")
     parser.add_argument("--workers", type=int, default=1, help="并发线程数")
-    parser.add_argument("--count", type=int, default=5, help="注册数量")
+    parser.add_argument("--count", type=int, default=25, help="注册数量")
     args = parser.parse_args()
 
     log.info("=" * 55)
